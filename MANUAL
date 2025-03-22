@@ -1,0 +1,34 @@
+#MANUAL DE USUARIO
+1.Instalar Git (si no lo tienes instalado):
+sudo apt update
+sudo apt install git
+
+2.Configurar Git:
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu_correo@ejemplo.com"
+
+3.Crear un Repositorio en GitHub:
+Clonar el Repositorio:
+git clone https://github.com/[tu_usuario]/sys-monitor-tool.git
+cd sys-monitor-tool
+
+4. Crear los archivo .sh:
+nano "nombre archivo".sh
+Hacer que script sean ejecutables
+chmod +x b"nombre archivo".sh
+
+5. Crear una Rama para Cada Funcionalidad:
+git checkout -b feature/resource-monitor
+git checkout -b feature/backup-manager
+git checkout -b feature/log-analyzer
+
+6.Añade los cambios y haz commits descriptivos:
+git add resource_monitor.sh
+git commit -m 'feat: Added CPU and memory monitoring'
+
+7.Subir Cambios y Crear Pull Requests:
+git push origin feature/resource-monitor
+
+8.Programar la Ejecución de Scripts
+crontab -e
+0 * * * * /ruta/al/script/resource_monitor.sh #se añadio para ejecutar resource_monitor.sh cada hora
